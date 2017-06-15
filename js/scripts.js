@@ -63,14 +63,6 @@ Albums.prototype.populate = function(data) {
 //                          User Interface Logic                              //
 ////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function() {
-  //gallery item height hack
-  function fixGalleryHeight() {
-    $('.gallery-item').each(function() {
-      var itemWidth = $(this).width();
-      $(this).height(itemWidth);
-    });
-  }
-
   // function to populate albums data to screen
   function populateScreen(albums) {
     $('#gallery').empty();
@@ -83,7 +75,6 @@ $(document).ready(function() {
       '</div>' +
       '</div>');
     });
-    // fixGalleryHeight();
   }
 
   //on form submit, run method that creates album, then append to page
@@ -99,11 +90,6 @@ $(document).ready(function() {
 
     albums.addAlbum(newAlbum);
     populateScreen(albums);
-  });
-
-  //fix gallery item height hack event listener
-  $(window).on('resize', function() {
-    // fixGalleryHeight();
   });
 
   // modal scripts

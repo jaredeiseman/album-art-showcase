@@ -73,9 +73,18 @@ header {
 
 @keyframes vinyl-rotate {
   0% {
-    transform: rotate(0);
+    transform: rotate(0) skewX(0);
+  }
+  25% {
+    transform: rotate(90deg) skewX(-4deg);
+  }
+  50% {
+    transform: rotate(180deg) skewX(0);
+  }
+  75% {
+    transform: rotate(270deg) skewX(4deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) skewX(0);
   }
 }
